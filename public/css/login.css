@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+body {
+  font-size: 14px;
+  background: rgba(24,131,167,1);
+}
+.outer-wrapper {
+  width: 100%;
+  height: 100vh; /* Menggunakan tinggi viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Menengahkan secara vertikal */
+}
+.login-wrapper {
+  width: 80vw; /* Menggunakan lebar viewport */
+  max-width: 650px; /* Maksimum lebar kotak login */
+  height: 60vh; /* Menggunakan tinggi viewport */
+  background: rgba(239,250,252,1);
+  border-radius: 42px; /* Menggunakan border-radius singkat */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper{
+  width: 65%;
+}
+.form-wrapper label{
+  display: block;
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+.form-wrapper input{
+  display: block;
+  width: 100%;
+  margin: 0 0 20px 0;
+  padding: 10px 5px;
+  border: none;
+  font-style: italic;
+}
+.form-wrapper a{
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.form-wrapper button{
+  font-size: 1.5em;
+  background-color: #FEB848;
+  display: block;
+  border: none;
+  outline: none;
+  padding: 10px 50px;
+  margin: auto;
+}

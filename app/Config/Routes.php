@@ -8,3 +8,13 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'DashboardController::index',['as' => 'dashboard','filter' => 'auth']);
 $routes->get('/login', 'Auth::login',['as' => 'loginPage']);
 $routes->post('/login', 'Auth::doLogin',['as' => 'doLogin']);
+
+
+$routes->group('post',  static function ($routes) {
+    $routes->get('/', 'PostController::index',['as' => 'allPost']);
+    $routes->get('add', 'PostController::create',['as' => 'addPost']);
+    $routes->post('add', 'PostController::store',['as' => 'storePost']);
+    $routes->get('(:num)', 'PostController::show/$1',['as' => 'showPost']);
+    $routes->get('category/(:num)', 'PostController::byCategory/$1',['as' => 'showCategory']);
+    $routes->get('subject/(:num)', 'PostController::bySubject/$1',['as' => 'postBySubject']);
+});

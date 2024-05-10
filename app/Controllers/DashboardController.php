@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Post;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class DashboardController extends BaseController
@@ -15,7 +16,14 @@ class DashboardController extends BaseController
     }
 
     public function index()
-    {
-        echo "Dashboard PAge";
+    { 
+        $postModel = new Post();
+
+        $data['posts'] = $postModel->getAllPost();
+        return view('dashboard/index',$data);
+    }
+
+    public function show($page){
+
     }
 }
