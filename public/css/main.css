@@ -64,7 +64,7 @@ body {
     display: flex;
 }
 .navbar-menu a{
-    padding: 15;
+    padding: 14;
     width: 200;
     text-align: center;
     color: #ffffff;
@@ -303,6 +303,7 @@ a.yellow{
     .navbar-menu-mobile ul{
         display: block;
         list-style: none;
+        padding: 0;
     }
     .navbar-menu-mobile li{
         display: block;

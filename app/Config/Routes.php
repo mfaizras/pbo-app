@@ -20,5 +20,13 @@ $routes->group('post',['filter' => 'auth'],  static function ($routes) {
 });
 
 $routes->group('admin',['filter' => 'auth'],static function($routes){
+    $routes->get('/','AdminController::index',['as' => 'admin']);
     $routes->get('subject','AdminController::subject',['as' => 'adminSubject']);
+    $routes->post('subject','AdminController::subjectStore',['as' => 'adminSubjectStore']);
+    $routes->get('lecture','AdminController::lecture',['as' => 'adminLecture']);
+    $routes->post('lecture','AdminController::lectureStore',['as' => 'adminLectureStore']);
+    $routes->get('category','AdminController::category',['as' => 'adminCategory']);
+    $routes->post('category','AdminController::categoryStore',['as' => 'adminCategoryStore']);
+    $routes->get('user','AdminController::user',['as' => 'adminUser']);
+    $routes->post('user','AdminController::userStore',['as' => 'adminUserStore']);
 });

@@ -34,7 +34,8 @@
                         foreach($builder as $subjectType): ?>
                         <li><a href="<?= url_to('showCategory',$subjectType['id']) ?>" class="text-uppercase"><?= $subjectType['title'] ?></a></li>
                         <?php endforeach; ?>
-                        <li><a href="<?= url_to('addPost') ?>" class="text-uppercase">Tambah Post</a></li>
+                        <!-- <li><a href="<?= url_to('addPost') ?>" class="text-uppercase">Tambah Post</a></li> -->
+                        <li><a href="<?= url_to('admin') ?>" class="text-uppercase">Admin Menu</a></li>
                     </ul>
                 </div>
                 <div class="search-box">

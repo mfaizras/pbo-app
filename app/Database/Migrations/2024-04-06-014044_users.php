@@ -23,6 +23,11 @@ class Users extends Migration{
             'password' => [
                 'type'=> 'VARCHAR',
                 'constraint' => 255
+            ],
+            'role' => [
+                'type' => 'ENUM',
+                'constraint' => ['admin','lecture','student'],
+                'default' => 'student'
             ]
         ]);
         $this->forge->addKey('id', TRUE);

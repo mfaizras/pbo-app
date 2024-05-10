@@ -7,6 +7,8 @@ class Subject extends Model{
     protected $table      = 'subjects';
     // Uncomment below if you want add primary key
     protected $primaryKey = 'id';
+    protected $allowedFields    = ['title','lecture_id','subject_type_id','academic_year'];
+
 
     public function getSubject(){
         $builder = $this->db->table($this->table);
