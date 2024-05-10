@@ -35,6 +35,12 @@ class Lectures extends Seeder
             ],
             [
                 'name' => 'RISNAWATI'
+            ],
+            [
+                'name' => 'M Qurtubi'
+            ],
+            [
+                'name' => 'Izzah'
             ]
         ];
 

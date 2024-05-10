@@ -63,6 +63,18 @@ class Subject extends Seeder
                 'subject_type_id' => 1,
                 'academic_year' => "2023/2024"
             ],
+            [
+                'title' => 'Pemrograman Berbasis Objek',
+                'lecture_id' => 10,
+                'subject_type_id' => 2,
+                'academic_year' => "2023/2024"
+            ],
+            [
+                'title' => 'Sistem Operasi',
+                'lecture_id' => 11,
+                'subject_type_id' => 2,
+                'academic_year' => "2023/2024"
+            ],
 
         ];
 
