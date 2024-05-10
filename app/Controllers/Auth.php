@@ -28,6 +28,7 @@ class Auth extends Controller{
                     'id' => $data['id'],
                     'username' => $data['username'],
                     'name' => $data['name'],
+                    'role' => $data['role'],
                     'logged_in' => TRUE
                 ];
                 $session->set($arrSess);
@@ -36,6 +37,11 @@ class Auth extends Controller{
             } 
         }
 
+        return redirect()->to(url_to('loginPage'));
+    }
+
+    public function logout()  {
+        session()->destroy();
         return redirect()->to(url_to('loginPage'));
     }
 }

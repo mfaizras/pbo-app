@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'DashboardController::index',['as' => 'dashboard','filter' => 'auth']);
 $routes->get('/login', 'Auth::login',['as' => 'loginPage']);
 $routes->post('/login', 'Auth::doLogin',['as' => 'doLogin']);
+$routes->get('logout', 'Auth::logout',['as' => 'doLogout']);
 
 
 $routes->group('post',['filter' => 'auth'],  static function ($routes) {
