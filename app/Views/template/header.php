@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="picture">
-                    <a href="#"><img src="<?= base_url("images/GambarAkun.png") ?>" alt="GambarAkun"/></a>
+                    <a href="<?= url_to('profilePage') ?>"><img src="<?= base_url("images/GambarAkun.png") ?>" alt="GambarAkun"/></a>
                 </div>
                 <div class="navbar-menu">
                     <ul>

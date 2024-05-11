@@ -44,4 +44,24 @@ class Auth extends Controller{
         session()->destroy();
         return redirect()->to(url_to('loginPage'));
     }
+
+    public function userProfile(){
+        $userModel = new User();
+
+        $data['user'] = $userModel->find(session()->get('id'));
+
+        return view('dashboard/userprofile',$data);
+    }
+
+    public function profileUpdate(){
+        $input = $this->request->getVar();
+
+        $userModel = new User();
+
+        $input['id'] = session()->get('id');
+
+        $userModel->save($input);
+
+        return $this->response->setStatusCode(200)->setJSON(['message' => 'Profile updated successfully.']);
+    }
 }

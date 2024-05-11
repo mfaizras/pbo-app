@@ -9,12 +9,12 @@ $routes->get('/', 'DashboardController::index',['as' => 'dashboard','filter' => 
 $routes->get('/login', 'Auth::login',['as' => 'loginPage']);
 $routes->post('/login', 'Auth::doLogin',['as' => 'doLogin']);
 $routes->get('logout', 'Auth::logout',['as' => 'doLogout']);
+$routes->get('/profile', 'Auth::userProfile',['as' => 'profilePage','filter' => 'auth']);
+$routes->post('/profile', 'Auth::profileUpdate',['as' => 'profileUpdate','filter' => 'auth']);
 
 
 $routes->group('post',['filter' => 'auth'],  static function ($routes) {
     $routes->get('/', 'PostController::index',['as' => 'allPost']);
-    $routes->get('add', 'PostController::create',['as' => 'addPost']);
-    $routes->post('add', 'PostController::store',['as' => 'storePost']);
     $routes->get('(:num)', 'PostController::show/$1',['as' => 'showPost']);
     $routes->get('category/(:num)', 'PostController::byCategory/$1',['as' => 'showCategory']);
     $routes->get('subject/(:num)', 'PostController::bySubject/$1',['as' => 'postBySubject']);
@@ -34,4 +34,10 @@ $routes->group('admin',['filter' => 'auth'],static function($routes){
     $routes->get('user/delete/(:num)','AdminUser::delete/$1',['as' => 'adminUserDelete']);
     $routes->get('user/edit/(:num)','AdminUser::edit/$1',['as' => 'adminUserEdit']);
     $routes->post('user/edit/(:num)','AdminUser::update/$1',['as' => 'adminUserUpdate']);
+    $routes->get('post', 'AdminPost::index',['as' => 'adminPost']);
+    $routes->get('post/add', 'AdminPost::create',['as' => 'addPost']);
+    $routes->post('post/add', 'AdminPost::store',['as' => 'storePost']);
+    $routes->get('post/delete/(:num)','AdminPost::delete/$1',['as' => 'adminPostDelete']);
+    $routes->get('post/edit/(:num)','AdminPost::edit/$1',['as' => 'adminPostEdit']);
+    $routes->post('post/edit/(:num)','AdminPost::update/$1',['as' => 'adminPostUpdate']);
 });

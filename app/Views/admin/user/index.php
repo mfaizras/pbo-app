@@ -21,7 +21,7 @@
       <td><?= $user['username'] ?></td>
       <td><?= $user['role'] ?></td>
       <td>
-        <a href="<?= url_to('adminUserDelete',$user['id']) ?>" class="btn btn-danger">Delete</a>
+        <a href="<?= url_to('adminUserDelete',$user['id']) ?>" class="btn btn-danger <?= $user['role'] == 'admin'?'disabled':'' ?>" >Delete</a>
         <a href="<?= url_to('adminUserEdit',$user['id']) ?>" class="btn btn-info">Edit</a>
       </td>
     </tr>
