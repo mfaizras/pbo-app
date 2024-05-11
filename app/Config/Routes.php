@@ -28,6 +28,10 @@ $routes->group('admin',['filter' => 'auth'],static function($routes){
     $routes->post('lecture','AdminController::lectureStore',['as' => 'adminLectureStore']);
     $routes->get('category','AdminController::category',['as' => 'adminCategory']);
     $routes->post('category','AdminController::categoryStore',['as' => 'adminCategoryStore']);
-    $routes->get('user','AdminController::user',['as' => 'adminUser']);
-    $routes->post('user','AdminController::userStore',['as' => 'adminUserStore']);
+    $routes->get('user','AdminUser::index',['as' => 'adminUser']);
+    $routes->get('user/add','AdminUser::create',['as' => 'adminUserAdd']);
+    $routes->post('user/add','AdminUser::store',['as' => 'adminUserStore']);
+    $routes->get('user/delete/(:num)','AdminUser::delete/$1',['as' => 'adminUserDelete']);
+    $routes->get('user/edit/(:num)','AdminUser::edit/$1',['as' => 'adminUserEdit']);
+    $routes->post('user/edit/(:num)','AdminUser::update/$1',['as' => 'adminUserUpdate']);
 });

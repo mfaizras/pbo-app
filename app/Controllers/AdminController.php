@@ -68,6 +68,10 @@ class AdminController extends BaseController
         return view('admin/user');
     }
 
+    public function userTable() {
+        return view('admin/user/index');
+    }
+
     public function userStore() {
         $input = $this->request->getVar();
         $userModel = new User();
