@@ -12,8 +12,9 @@ class Subject extends Model{
 
     public function getSubject(){
         $builder = $this->db->table($this->table);
-        $builder->select($this->table.'.*, lecturers.name as lecturer_name');
+        $builder->select($this->table.'.*, lecturers.name as lecturer_name,subject_types.title as subject_type');
         $builder->join('lecturers','subjects.lecture_id = lecturers.id');
+        $builder->join('subject_types','subjects.subject_type_id = subject_types.id');
         return $builder->get()->getResultArray();
     }
 

@@ -64,13 +64,14 @@ body {
     display: flex;
 }
 .navbar-menu a{
-    padding: 14;
+    padding: 15;
     width: 200;
     text-align: center;
     color: #ffffff;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
+    line-height: normal;
 }
 .navbar-menu a:hover{
     color:#2d2d2d;
@@ -146,6 +147,9 @@ body {
     color: #ffffff;
     background-color: #2d2d2d;
     margin: 0 10;
+    font-family: sans-serif;
+    line-height: normal;
+    font-size: small;
 }
 #prevPage, #nextPage{
     border: none;
@@ -219,6 +223,9 @@ a.yellow{
     cursor: pointer;
     border-radius: 5px;
     width: 100px;
+    font-size: small;
+    font-family: sans-serif;
+    line-height: normal;
 }
 .akun-wrapper button:hover{
     background-color: #ffcd29;
@@ -246,14 +253,6 @@ a.yellow{
     font-weight: bold;
     font-family: "open sans", sans-serif;
 }
-/* .edit-wrapper button{
-    padding: 10px 20px;
-    background-color: #2d2d2d;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-} */
 .edit-wrapper{
     display: block;
     position: absolute;
@@ -445,11 +444,6 @@ a.yellow{
         top: auto;
         justify-content: center;
         align-items: center;
-        /* margin-bottom: 50px; */
-        /* height: 100px; */
-        /* position: absolute; */
-        /* right: 40;
-        top: 310; */
     }
     #edit-btn, #save-btn{
         margin-top: 10px;
