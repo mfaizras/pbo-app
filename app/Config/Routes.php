@@ -40,4 +40,5 @@ $routes->group('admin',['filter' => 'auth'],static function($routes){
     $routes->get('post/delete/(:num)','AdminPost::delete/$1',['as' => 'adminPostDelete']);
     $routes->get('post/edit/(:num)','AdminPost::edit/$1',['as' => 'adminPostEdit']);
     $routes->post('post/edit/(:num)','AdminPost::update/$1',['as' => 'adminPostUpdate']);
+    $routes->post('post/edit/file/delete','AdminPost::deleteFile',['as' => 'adminPostFileDelete']);
 });

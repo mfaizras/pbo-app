@@ -23,7 +23,8 @@ class File extends Migration
                 'constraint' => 255
             ],
             'post_id' => [
-                'type' => 'BIGINT'
+                'type' => 'BIGINT',
+                'unsigned' => true,
             ]
 
         ]);

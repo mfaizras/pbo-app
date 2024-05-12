@@ -1,6 +1,7 @@
 <?php 
 namespace App\Controllers;
 
+use App\Models\File;
 use App\Models\Post;
 use Config\Database;
 use App\Models\Subject;
@@ -63,19 +64,61 @@ class AdminPost extends Controller{
     }
     
     public function edit($id) {
-        $postModel = new post();
+        $postModel = new Post();
+        $subjectModel = new Subject();
+        $fileModel = new File();
 
+        $data['subjects'] = $subjectModel->findAll();
         $data['post'] = $postModel->find($id);
+        $data['files'] = $fileModel->where('post_id',$id)->asArray()->findAll();
         $data['id'] = $id;
-        return view('admin/postEdit',$data);
+
+        // dd($data);
+        return view('admin/post/edit',$data);
     }
 
     public function update($id) {
+
+        $input = $this->request->getVar();
+        $postModel = new Post();
+        $db = Database::connect();
+        $fileTable = new File();
+
+
+        $data = [
+            'id' => $input['id'],
+            'title' =>  $input['title'],
+            'description' => $input['description'],
+            'subject_id' => $input['subject_id']
+        ];
+
+        $postModel->save($data);
+
+        if(isset($input['files'])){
+            foreach($input['files'] as $file){
+                $fileTable->save([
+                    'id' => !empty($file['id'])?$file['id']:'',
+                    'filename' => $file['filename'],
+                    'filelink' => $file['filelink'],
+                    'post_id' => $input['id']
+                ]);
+            }
+        }
+    
+
+        return redirect()->to(url_to('adminPost'));
         $input = $this->request->getVar();
         $postModel = new Post();
     
         $postModel->save($input);
         
         return redirect()->to(url_to('adminPost'));
+    }
+
+    function deleteFile() {
+        $id = $this->request->getVar('id');
+        $fileModel = new File();
+
+        $fileModel->delete($id);
     }
 }

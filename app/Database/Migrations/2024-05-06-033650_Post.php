@@ -22,7 +22,8 @@ class Post extends Migration
                 'type' => 'TEXT',
             ],
             'subject_id' => [
-                'type' => 'BIGINT'
+                'type' => 'BIGINT',
+                'unsigned' => true,
             ]
 
         ]);

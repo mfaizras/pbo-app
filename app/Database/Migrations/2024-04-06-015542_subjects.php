@@ -18,10 +18,12 @@ class Subjects extends Migration{
                     'constraint' => 255
         		],
                 'lecture_id' => [
-                    'type' => 'BIGINT'
+                    'type' => 'BIGINT',
+                    'unsigned' => true,
                 ],
                 'subject_type_id' => [
                     'type' => 'BIGINT',
+                    'unsigned' => true,
                 ],
                 'academic_year' => [
                     'type' => 'VARCHAR',
