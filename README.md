@@ -26,7 +26,7 @@ Untuk menjalankan program ini adalah dnegan cara
 
 ## Authors
 
-Made by Kelompok 7
+Made by Kelompok 2
 - Ahmad Nur Fauzi Sahputra (50422129)
 - Andika Galuh Pamungkas (50422208)
 - Dewi Safira Permata Sari (50422411)
